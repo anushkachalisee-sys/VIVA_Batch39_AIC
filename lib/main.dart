@@ -1,19 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'app/theme/app_colors.dart';
 import 'app/theme/app_theme.dart';
-import 'features/music_preferences/presentation/music_preferences_screen.dart';
+import 'features/authentication/presentation/artist/artist_registration_screen.dart';
+import 'features/authentication/presentation/listener/registration_screen.dart';
 
 void main() {
-  WidgetsFlutterBinding.ensureInitialized();
-  SystemChrome.setSystemUIOverlayStyle(
-    const SystemUiOverlayStyle(
-      statusBarColor: Colors.transparent,
-      statusBarIconBrightness: Brightness.light,
-      systemNavigationBarColor: AppColors.background,
-      systemNavigationBarIconBrightness: Brightness.light,
-    ),
-  );
   runApp(const VivaApp());
 }
 
@@ -26,7 +16,14 @@ class VivaApp extends StatelessWidget {
       title: 'VIVA – Feel the Music',
       debugShowCheckedModeBanner: false,
       theme: AppTheme.darkTheme,
-      home: const MusicPreferencesScreen(),
+      darkTheme: AppTheme.darkTheme,
+      themeMode: ThemeMode.dark,
+      // Set initialRoute to '/artist-registration' to launch Artist Registration directly.
+      initialRoute: '/artist-registration',
+      routes: {
+        '/': (context) => const RegistrationScreen(),
+        '/artist-registration': (context) => const ArtistRegistrationScreen(),
+      },
     );
   }
 }
