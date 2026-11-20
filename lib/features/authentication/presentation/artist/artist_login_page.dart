@@ -195,10 +195,10 @@ class _ArtistLoginPageState extends State<ArtistLoginPage> {
 
                   // Email Input Field
                   CustomTextField(
-                    label: 'Email',
+                    labelText: 'Email',
                     hintText: 'Enter your email',
                     controller: _emailController,
-                    prefixIcon: Icons.email_outlined,
+                    prefixIcon: const Icon(Icons.email_outlined),
                     keyboardType: TextInputType.emailAddress,
                     textInputAction: TextInputAction.next,
                     validator: (value) {
@@ -219,10 +219,10 @@ class _ArtistLoginPageState extends State<ArtistLoginPage> {
 
                   // Password Input Field
                   CustomTextField(
-                    label: 'Password',
+                    labelText: 'Password',
                     hintText: 'Enter your password',
                     controller: _passwordController,
-                    prefixIcon: Icons.lock_outline,
+                    prefixIcon: const Icon(Icons.lock_outline),
                     obscureText: _obscurePassword,
                     textInputAction: TextInputAction.done,
                     suffixIcon: IconButton(
@@ -277,7 +277,7 @@ class _ArtistLoginPageState extends State<ArtistLoginPage> {
                   // Artist Studio Log In Button
                   GradientButton(
                     text: 'Log In to Artist Studio',
-                    icon: Icons.arrow_forward_rounded,
+                    icon: const Icon(Icons.arrow_forward_rounded, size: 18),
                     isLoading: _isLoading,
                     onPressed: _handleArtistLogin,
                   ),

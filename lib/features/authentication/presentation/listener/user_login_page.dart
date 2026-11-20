@@ -189,10 +189,10 @@ class _UserLoginPageState extends State<UserLoginPage> {
 
                   // Email Input Field
                   CustomTextField(
-                    label: 'Email',
+                    labelText: 'Email',
                     hintText: 'Enter your email',
                     controller: _emailController,
-                    prefixIcon: Icons.email_outlined,
+                    prefixIcon: const Icon(Icons.email_outlined),
                     keyboardType: TextInputType.emailAddress,
                     textInputAction: TextInputAction.next,
                     validator: (value) {
@@ -213,10 +213,10 @@ class _UserLoginPageState extends State<UserLoginPage> {
 
                   // Password Input Field
                   CustomTextField(
-                    label: 'Password',
+                    labelText: 'Password',
                     hintText: 'Enter your password',
                     controller: _passwordController,
-                    prefixIcon: Icons.lock_outline,
+                    prefixIcon: const Icon(Icons.lock_outline),
                     obscureText: _obscurePassword,
                     textInputAction: TextInputAction.done,
                     suffixIcon: IconButton(
@@ -271,7 +271,7 @@ class _UserLoginPageState extends State<UserLoginPage> {
                   // Log In Button
                   GradientButton(
                     text: 'Log In',
-                    icon: Icons.arrow_forward_rounded,
+                    icon: const Icon(Icons.arrow_forward_rounded, size: 18),
                     isLoading: _isLoading,
                     onPressed: _handleLogin,
                   ),
