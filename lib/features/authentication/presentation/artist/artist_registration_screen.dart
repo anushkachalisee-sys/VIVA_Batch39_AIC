@@ -246,10 +246,10 @@ class _ArtistRegistrationScreenState extends State<ArtistRegistrationScreen> {
                       children: [
                         // A. Artist Name / Stage Name
                         CustomTextField(
-                          label: 'Artist Name / Stage Name',
+                          labelText: 'Artist Name / Stage Name',
                           hintText: 'What should your fans call you?',
                           controller: _artistNameController,
-                          prefixWidget: const Icon(
+                          prefixIcon: const Icon(
                             Icons.mic_none_rounded,
                             color: AppColors.secondaryText,
                             size: 22,
@@ -267,10 +267,10 @@ class _ArtistRegistrationScreenState extends State<ArtistRegistrationScreen> {
 
                         // B. Official Email Address
                         CustomTextField(
-                          label: 'Official Email Address',
+                          labelText: 'Official Email Address',
                           hintText: 'you@yourmusic.com',
                           controller: _emailController,
-                          prefixWidget: const Icon(
+                          prefixIcon: const Icon(
                             Icons.email_outlined,
                             color: AppColors.secondaryText,
                             size: 22,
@@ -295,10 +295,10 @@ class _ArtistRegistrationScreenState extends State<ArtistRegistrationScreen> {
 
                         // C. Password
                         CustomTextField(
-                          label: 'Password',
+                          labelText: 'Password',
                           hintText: 'Create a strong password',
                           controller: _passwordController,
-                          prefixWidget: const Icon(
+                          prefixIcon: const Icon(
                             Icons.lock_outline_rounded,
                             color: AppColors.secondaryText,
                             size: 22,
@@ -334,10 +334,10 @@ class _ArtistRegistrationScreenState extends State<ArtistRegistrationScreen> {
 
                         // D. Confirm Password
                         CustomTextField(
-                          label: 'Confirm Password',
+                          labelText: 'Confirm Password',
                           hintText: 'Re-enter your password',
                           controller: _confirmPasswordController,
-                          prefixWidget: const Icon(
+                          prefixIcon: const Icon(
                             Icons.lock_outline_rounded,
                             color: AppColors.secondaryText,
                             size: 22,
@@ -470,10 +470,10 @@ class _ArtistRegistrationScreenState extends State<ArtistRegistrationScreen> {
 
                         // G. Short Bio (Optional)
                         CustomTextField(
-                          label: 'Short Bio (optional)',
+                          labelText: 'Short Bio (optional)',
                           hintText: 'Tell us a little about your sound...',
                           controller: _bioController,
-                          prefixWidget: const Icon(
+                          prefixIcon: const Icon(
                             Icons.edit_note_rounded,
                             color: AppColors.secondaryText,
                             size: 22,
@@ -505,10 +505,12 @@ class _ArtistRegistrationScreenState extends State<ArtistRegistrationScreen> {
                         // I. Create Account Button
                         GradientButton(
                           text: 'CREATE ACCOUNT',
-                          colors: const [
-                            AppColors.cyanAccent,
-                            Color(0xFF0096C7),
-                          ],
+                          gradient: const LinearGradient(
+                            colors: [
+                              AppColors.cyanAccent,
+                              Color(0xFF0096C7),
+                            ],
+                          ),
                           onPressed: _handleArtistRegistration,
                         ),
                       ],

@@ -214,10 +214,10 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                       children: [
                         // 4. Full Name
                         CustomTextField(
-                          label: 'Full Name',
+                          labelText: 'Full Name',
                           hintText: 'Enter your full name',
                           controller: _fullNameController,
-                          prefixWidget: const Icon(
+                          prefixIcon: const Icon(
                             Icons.person_outline_rounded,
                             color: AppColors.secondaryText,
                             size: 22,
@@ -235,10 +235,10 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
 
                         // 5. Username
                         CustomTextField(
-                          label: 'Username',
+                          labelText: 'Username',
                           hintText: 'Choose a username',
                           controller: _usernameController,
-                          prefixWidget: const Text(
+                          prefixIcon: const Text(
                             '@',
                             style: TextStyle(
                               color: AppColors.secondaryText,
@@ -262,10 +262,10 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
 
                         // 6. Email Address
                         CustomTextField(
-                          label: 'Email Address',
+                          labelText: 'Email Address',
                           hintText: 'Enter your email address',
                           controller: _emailController,
-                          prefixWidget: const Icon(
+                          prefixIcon: const Icon(
                             Icons.email_outlined,
                             color: AppColors.secondaryText,
                             size: 22,
@@ -290,10 +290,10 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
 
                         // 7. Password
                         CustomTextField(
-                          label: 'Password',
+                          labelText: 'Password',
                           hintText: 'Create a password',
                           controller: _passwordController,
-                          prefixWidget: const Icon(
+                          prefixIcon: const Icon(
                             Icons.lock_outline_rounded,
                             color: AppColors.secondaryText,
                             size: 22,
@@ -329,10 +329,10 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
 
                         // 8. Confirm Password (Immediately following Password field)
                         CustomTextField(
-                          label: 'Confirm Password',
+                          labelText: 'Confirm Password',
                           hintText: 'Re-enter your password',
                           controller: _confirmPasswordController,
-                          prefixWidget: const Icon(
+                          prefixIcon: const Icon(
                             Icons.lock_outline_rounded,
                             color: AppColors.secondaryText,
                             size: 22,
