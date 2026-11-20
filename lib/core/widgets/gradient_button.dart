@@ -100,3 +100,28 @@ class GradientButton extends StatelessWidget {
     );
   }
 }
+}
+
+/// Simple loading indicator widget for GradientButton.
+class LoadingWidget extends StatelessWidget {
+  final double size;
+  final Color color;
+
+  const LoadingWidget({
+    super.key,
+    required this.size,
+    required this.color,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: size,
+      height: size,
+      child: CircularProgressIndicator(
+        strokeWidth: 2,
+        valueColor: AlwaysStoppedAnimation<Color>(color),
+      ),
+    );
+  }
+}

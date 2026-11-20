@@ -1,24 +1,31 @@
 import 'package:flutter/material.dart';
+import '../../app/theme/app_colors.dart';
 
-/// Reusable loading indicator widget for buttons and screens.
+/// Reusable loading indicator for the VIVA application.
 class LoadingWidget extends StatelessWidget {
   final double size;
-  final Color color;
+  final double strokeWidth;
+  final Color? color;
 
   const LoadingWidget({
     super.key,
     this.size = 24.0,
-    this.color = Colors.white,
+    this.strokeWidth = 2.5,
+    this.color,
   });
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: size,
-      height: size,
-      child: CircularProgressIndicator(
-        strokeWidth: 2.5,
-        valueColor: AlwaysStoppedAnimation<Color>(color),
+    return Center(
+      child: SizedBox(
+        width: size,
+        height: size,
+        child: CircularProgressIndicator(
+          strokeWidth: strokeWidth,
+          valueColor: AlwaysStoppedAnimation<Color>(
+            color ?? AppColors.primaryPink,
+          ),
+        ),
       ),
     );
   }
