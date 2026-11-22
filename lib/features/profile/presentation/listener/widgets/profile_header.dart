@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:viva/core/constants/app_colors.dart';
+import 'package:viva/app/theme/app_colors.dart';
 
 class ProfileHeader extends StatelessWidget {
   final VoidCallback? onBackTap;
@@ -28,12 +28,12 @@ class ProfileHeader extends StatelessWidget {
                 width: 38,
                 height: 38,
                 decoration: BoxDecoration(
-                  color: AppColors.headerButtonBg,
+                  color: AppColors.unselectedChip,
                   shape: BoxShape.circle,
                 ),
                 child: const Icon(
                   Icons.arrow_back,
-                  color: AppColors.textPrimary,
+                  color: AppColors.primaryText,
                   size: 20,
                 ),
               ),
@@ -44,7 +44,7 @@ class ProfileHeader extends StatelessWidget {
           const Text(
             'Profile',
             style: TextStyle(
-              color: AppColors.textPrimary,
+              color: AppColors.primaryText,
               fontSize: 18,
               fontWeight: FontWeight.bold,
               letterSpacing: 0.3,
@@ -61,12 +61,12 @@ class ProfileHeader extends StatelessWidget {
                 width: 38,
                 height: 38,
                 decoration: BoxDecoration(
-                  color: AppColors.headerButtonBg,
+                  color: AppColors.unselectedChip,
                   shape: BoxShape.circle,
                 ),
                 child: const Icon(
                   Icons.settings_outlined,
-                  color: AppColors.textPrimary,
+                  color: AppColors.primaryText,
                   size: 20,
                 ),
               ),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:viva/core/constants/app_colors.dart';
+import 'package:viva/app/theme/app_colors.dart';
 import 'package:viva/features/profile/domain/entities/listener_profile.dart';
 
 class EventsSection extends StatelessWidget {
@@ -29,7 +29,7 @@ class EventsSection extends StatelessWidget {
               const Text(
                 'My Events',
                 style: TextStyle(
-                  color: AppColors.textPrimary,
+                  color: AppColors.primaryText,
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
                 ),
@@ -37,7 +37,7 @@ class EventsSection extends StatelessWidget {
               Text(
                 '${profile.upcomingEvents.length} UPCOMING',
                 style: const TextStyle(
-                  color: AppColors.cyanAccent,
+                  color: AppColors.accentCyan,
                   fontSize: 11,
                   fontWeight: FontWeight.bold,
                   letterSpacing: 0.8,
@@ -85,10 +85,10 @@ class EventsSection extends StatelessWidget {
                     Container(
                       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
                       decoration: BoxDecoration(
-                        color: AppColors.secondaryBackground,
+                        color: AppColors.background,
                         borderRadius: BorderRadius.circular(12),
                         border: Border.all(
-                          color: AppColors.pinkAccent.withValues(alpha: 0.8),
+                          color: AppColors.primaryPink.withValues(alpha: 0.8),
                           width: 1.2,
                         ),
                       ),
@@ -98,7 +98,7 @@ class EventsSection extends StatelessWidget {
                           Text(
                             event.month,
                             style: const TextStyle(
-                              color: AppColors.pinkAccent,
+                              color: AppColors.primaryPink,
                               fontSize: 10,
                               fontWeight: FontWeight.bold,
                             ),
@@ -106,7 +106,7 @@ class EventsSection extends StatelessWidget {
                           Text(
                             event.day,
                             style: const TextStyle(
-                              color: AppColors.textPrimary,
+                              color: AppColors.primaryText,
                               fontSize: 16,
                               fontWeight: FontWeight.bold,
                               height: 1.1,
@@ -126,7 +126,7 @@ class EventsSection extends StatelessWidget {
                           Text(
                             event.title,
                             style: const TextStyle(
-                              color: AppColors.textPrimary,
+                              color: AppColors.primaryText,
                               fontSize: 13,
                               fontWeight: FontWeight.bold,
                             ),
@@ -137,7 +137,7 @@ class EventsSection extends StatelessWidget {
                           Text(
                             event.location,
                             style: const TextStyle(
-                              color: AppColors.textSecondary,
+                              color: AppColors.secondaryText,
                               fontSize: 11,
                             ),
                             maxLines: 1,
@@ -147,7 +147,7 @@ class EventsSection extends StatelessWidget {
                           Text(
                             event.status,
                             style: const TextStyle(
-                              color: AppColors.cyanAccent,
+                              color: AppColors.accentCyan,
                               fontSize: 10,
                               fontWeight: FontWeight.bold,
                               letterSpacing: 0.5,
@@ -160,7 +160,7 @@ class EventsSection extends StatelessWidget {
                     // Arrow Icon
                     const Icon(
                       Icons.north_east,
-                      color: AppColors.cyanAccent,
+                      color: AppColors.accentCyan,
                       size: 18,
                     ),
                     const SizedBox(width: 4),

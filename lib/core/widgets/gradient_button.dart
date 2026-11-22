@@ -100,7 +100,6 @@ class GradientButton extends StatelessWidget {
     );
   }
 }
-}
 
 /// Simple loading indicator widget for GradientButton.
 class LoadingWidget extends StatelessWidget {

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:viva/core/constants/app_colors.dart';
+import 'package:viva/app/theme/app_colors.dart';
 
 class MusicMoodSection extends StatelessWidget {
   final String activeMood;
@@ -22,7 +22,7 @@ class MusicMoodSection extends StatelessWidget {
           const Text(
             'Music Mood',
             style: TextStyle(
-              color: AppColors.textPrimary,
+              color: AppColors.primaryText,
               fontSize: 18,
               fontWeight: FontWeight.bold,
             ),
@@ -47,12 +47,12 @@ class MusicMoodSection extends StatelessWidget {
                 _buildMoodItem(
                   moodName: 'Happy',
                   icon: Icons.sentiment_satisfied_alt_outlined,
-                  color: AppColors.cyanAccent,
+                  color: AppColors.accentCyan,
                 ),
                 _buildMoodItem(
                   moodName: 'Late Night',
                   icon: Icons.auto_awesome,
-                  color: AppColors.pinkAccent,
+                  color: AppColors.primaryPink,
                 ),
               ],
             ),
@@ -98,7 +98,7 @@ class MusicMoodSection extends StatelessWidget {
                   child: Text(
                     moodName,
                     style: TextStyle(
-                      color: isSelected ? AppColors.textPrimary : AppColors.textSecondary,
+                      color: isSelected ? AppColors.primaryText : AppColors.secondaryText,
                       fontSize: 13,
                       fontWeight: isSelected ? FontWeight.bold : FontWeight.w500,
                     ),
