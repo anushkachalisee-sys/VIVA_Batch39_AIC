@@ -24,6 +24,7 @@ abstract class AppColors {
   static const Color searchBackground = Color(0xFF1B172E);
   static const Color searchBorder = Color(0xFF292244);
   static const Color searchHint = Color(0xFF6B6884);
+  static const Color inputBackground = searchBackground;
 
   // Avatars
   static const Color avatarPlaceholder = Color(0xFF28243C);
@@ -36,6 +37,11 @@ abstract class AppColors {
   static const Color darkCheckIcon = Color(0xFF0B0813);
 
   // Reusable Gradients
+  static const LinearGradient soundwaveGlow = LinearGradient(
+    colors: [accentCyan, primaryPurple, primaryPink],
+    begin: Alignment.centerLeft,
+    end: Alignment.centerRight,
+  );
   static const LinearGradient primaryGradient = LinearGradient(
     colors: [primaryPurple, primaryPink],
     begin: Alignment.centerLeft,
