@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:viva/features/music_preferences/presentation/music_preferences_screen.dart';
+import 'package:viva/features/profile/presentation/listener/pages/listener_profile_page.dart';
 import 'app/theme/app_theme.dart';
 import 'features/authentication/presentation/artist/artist_registration_screen.dart';
 import 'features/authentication/presentation/listener/registration_screen.dart';
@@ -18,12 +20,7 @@ class VivaApp extends StatelessWidget {
       theme: AppTheme.darkTheme,
       darkTheme: AppTheme.darkTheme,
       themeMode: ThemeMode.dark,
-      // Set initialRoute to '/artist-registration' to launch Artist Registration directly.
-      initialRoute: '/artist-registration',
-      routes: {
-        '/': (context) => const RegistrationScreen(),
-        '/artist-registration': (context) => const ArtistRegistrationScreen(),
-      },
+      home: const MusicPreferencesScreen(),
     );
   }
 }

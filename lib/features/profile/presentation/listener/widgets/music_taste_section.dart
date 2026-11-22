@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:viva/core/constants/app_colors.dart';
+import 'package:viva/app/theme/app_colors.dart';
 import 'package:viva/features/profile/domain/entities/listener_profile.dart';
 
 class MusicTasteSection extends StatelessWidget {
@@ -21,7 +21,7 @@ class MusicTasteSection extends StatelessWidget {
           const Text(
             'My Music Taste',
             style: TextStyle(
-              color: AppColors.textPrimary,
+              color: AppColors.primaryText,
               fontSize: 18,
               fontWeight: FontWeight.bold,
             ),
@@ -34,8 +34,8 @@ class MusicTasteSection extends StatelessWidget {
             items: profile.genreTaste,
             borderColors: [
               AppColors.primaryPurple,
-              AppColors.pinkAccent,
-              AppColors.cyanAccent,
+              AppColors.primaryPink,
+              AppColors.accentCyan,
             ],
           ),
           const SizedBox(height: 10),
@@ -45,7 +45,7 @@ class MusicTasteSection extends StatelessWidget {
             label: 'ARTISTS',
             items: profile.artistTaste,
             borderColors: [
-              AppColors.pinkAccent,
+              AppColors.primaryPink,
               AppColors.primaryPurple,
             ],
           ),
@@ -56,7 +56,7 @@ class MusicTasteSection extends StatelessWidget {
             label: 'LANGUAGES',
             items: profile.languageTaste,
             borderColors: [
-              AppColors.cyanAccent,
+              AppColors.accentCyan,
               AppColors.primaryPurple,
             ],
           ),
@@ -81,7 +81,7 @@ class MusicTasteSection extends StatelessWidget {
           child: Text(
             label,
             style: const TextStyle(
-              color: AppColors.textMuted,
+              color: AppColors.mutedText,
               fontSize: 11,
               fontWeight: FontWeight.bold,
               letterSpacing: 0.8,
