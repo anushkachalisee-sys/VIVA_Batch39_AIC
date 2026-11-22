@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:viva/features/authentication/presentation/artist/artist_login_page.dart';
 import 'package:viva/features/music_preferences/presentation/music_preferences_screen.dart';
 import 'package:viva/features/profile/presentation/listener/pages/listener_profile_page.dart';
 import 'app/theme/app_theme.dart';
