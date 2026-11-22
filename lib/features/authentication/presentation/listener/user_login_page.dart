@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../../../app/routes/app_routes.dart';
 import '../../../../core/constants/app_assets.dart';
-import '../../../../core/constants/app_colors.dart';
+import '../../../../app/theme/app_colors.dart';
 import '../../../../core/widgets/custom_text_field.dart';
 import '../../../../core/widgets/gradient_button.dart';
 
@@ -43,14 +43,14 @@ class _UserLoginPageState extends State<UserLoginPage> {
 
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            backgroundColor: AppColors.purple,
+            backgroundColor: AppColors.background,
             behavior: SnackBarBehavior.floating,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(12),
             ),
             content: Row(
               children: const [
-                Icon(Icons.check_circle_outline, color: AppColors.cyan),
+                Icon(Icons.check_circle_outline, color: AppColors.accentCyan),
                 SizedBox(width: 10),
                 Expanded(
                   child: Text(
@@ -77,7 +77,7 @@ class _UserLoginPageState extends State<UserLoginPage> {
         ),
         content: Text(
           message,
-          style: const TextStyle(color: AppColors.textPrimary),
+          style: const TextStyle(color: AppColors.primaryText),
         ),
       ),
     );
@@ -93,7 +93,7 @@ class _UserLoginPageState extends State<UserLoginPage> {
       body: Container(
         height: screenHeight,
         decoration: const BoxDecoration(
-          gradient: AppColors.backgroundGradient,
+          color: AppColors.background,
         ),
         child: SafeArea(
           child: SingleChildScrollView(
@@ -112,7 +112,7 @@ class _UserLoginPageState extends State<UserLoginPage> {
                       Text(
                         'VIVA',
                         style: TextStyle(
-                          color: AppColors.textPrimary,
+                          color: AppColors.primaryText,
                           fontSize: 26,
                           fontWeight: FontWeight.w900,
                           letterSpacing: 2.0,
@@ -137,7 +137,7 @@ class _UserLoginPageState extends State<UserLoginPage> {
                         ),
                         boxShadow: [
                           BoxShadow(
-                            color: AppColors.purple.withValues(alpha: 0.15),
+                            color: AppColors.primaryPurple.withValues(alpha: 0.15),
                             blurRadius: 24,
                             spreadRadius: 2,
                           ),
@@ -153,7 +153,7 @@ class _UserLoginPageState extends State<UserLoginPage> {
                             return const Center(
                               child: Icon(
                                 Icons.graphic_eq,
-                                color: AppColors.pink,
+                                color: AppColors.primaryPink,
                                 size: 64,
                               ),
                             );
@@ -169,7 +169,7 @@ class _UserLoginPageState extends State<UserLoginPage> {
                   const Text(
                     'Welcome Back!',
                     style: TextStyle(
-                      color: AppColors.textPrimary,
+                      color: AppColors.primaryText,
                       fontSize: 28,
                       fontWeight: FontWeight.bold,
                       letterSpacing: -0.5,
@@ -179,7 +179,7 @@ class _UserLoginPageState extends State<UserLoginPage> {
                   const Text(
                     'Your next favorite song starts here.',
                     style: TextStyle(
-                      color: AppColors.textSecondary,
+                      color: AppColors.secondaryText,
                       fontSize: 14,
                       height: 1.3,
                     ),
@@ -224,7 +224,7 @@ class _UserLoginPageState extends State<UserLoginPage> {
                         _obscurePassword
                             ? Icons.visibility_outlined
                             : Icons.visibility_off_outlined,
-                        color: AppColors.textSecondary,
+                        color: AppColors.secondaryText,
                         size: 20,
                       ),
                       onPressed: () {
@@ -258,7 +258,7 @@ class _UserLoginPageState extends State<UserLoginPage> {
                       child: const Text(
                         'Forgot Password?',
                         style: TextStyle(
-                          color: AppColors.cyan,
+                          color: AppColors.accentCyan,
                           fontSize: 13,
                           fontWeight: FontWeight.w600,
                         ),
@@ -292,7 +292,7 @@ class _UserLoginPageState extends State<UserLoginPage> {
                         child: Text(
                           'or continue with',
                           style: TextStyle(
-                            color: AppColors.textSecondary,
+                            color: AppColors.secondaryText,
                             fontSize: 13,
                           ),
                         ),
@@ -334,7 +334,7 @@ class _UserLoginPageState extends State<UserLoginPage> {
                           errorBuilder: (context, error, stackTrace) {
                             return const Icon(
                               Icons.g_mobiledata_rounded,
-                              color: AppColors.cyan,
+                              color: AppColors.accentCyan,
                               size: 24,
                             );
                           },
@@ -343,7 +343,7 @@ class _UserLoginPageState extends State<UserLoginPage> {
                         const Text(
                           'Continue with Google',
                           style: TextStyle(
-                            color: AppColors.textPrimary,
+                            color: AppColors.primaryText,
                             fontSize: 15,
                             fontWeight: FontWeight.w600,
                           ),
@@ -364,7 +364,7 @@ class _UserLoginPageState extends State<UserLoginPage> {
                             const Text(
                               'New to VIVA? ',
                               style: TextStyle(
-                                color: AppColors.textSecondary,
+                                color: AppColors.secondaryText,
                                 fontSize: 14,
                               ),
                             ),
@@ -377,7 +377,7 @@ class _UserLoginPageState extends State<UserLoginPage> {
                               child: const Text(
                                 'Sign Up',
                                 style: TextStyle(
-                                  color: AppColors.cyan,
+                                  color: AppColors.accentCyan,
                                   fontSize: 14,
                                   fontWeight: FontWeight.bold,
                                 ),
@@ -392,7 +392,7 @@ class _UserLoginPageState extends State<UserLoginPage> {
                             const Text(
                               'Here as an artist? ',
                               style: TextStyle(
-                                color: AppColors.textSecondary,
+                                color: AppColors.secondaryText,
                                 fontSize: 14,
                               ),
                             ),
@@ -406,7 +406,7 @@ class _UserLoginPageState extends State<UserLoginPage> {
                               child: const Text(
                                 'Artist Login',
                                 style: TextStyle(
-                                  color: AppColors.cyan,
+                                  color: AppColors.accentCyan,
                                   fontSize: 14,
                                   fontWeight: FontWeight.bold,
                                 ),
