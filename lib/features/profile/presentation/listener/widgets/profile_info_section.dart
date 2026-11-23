@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:viva/core/constants/app_color.dart';
+import 'package:viva/app/theme/app_colors.dart';
 import 'package:viva/features/profile/domain/entities/listener_profile.dart';
 
 class ProfileInfoSection extends StatelessWidget {
@@ -32,7 +32,7 @@ class ProfileInfoSection extends StatelessWidget {
                   spreadRadius: 2,
                 ),
                 BoxShadow(
-                  color: AppColors.pinkAccent.withValues(alpha: 0.3),
+                  color: AppColors.primaryPink.withValues(alpha: 0.3),
                   blurRadius: 10,
                   spreadRadius: 1,
                 ),
@@ -48,7 +48,7 @@ class ProfileInfoSection extends StatelessWidget {
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     gradient: LinearGradient(
-                      colors: [AppColors.primaryPurple, AppColors.pinkAccent],
+                      colors: [AppColors.primaryPurple, AppColors.primaryPink],
                       begin: Alignment.topLeft,
                       end: Alignment.bottomRight,
                     ),
@@ -60,7 +60,7 @@ class ProfileInfoSection extends StatelessWidget {
                   width: 88,
                   height: 88,
                   decoration: const BoxDecoration(
-                    color: AppColors.mainBackground,
+                    color: AppColors.background,
                     shape: BoxShape.circle,
                   ),
                 ),
@@ -72,7 +72,7 @@ class ProfileInfoSection extends StatelessWidget {
                   decoration: const BoxDecoration(
                     shape: BoxShape.circle,
                     gradient: LinearGradient(
-                      colors: [AppColors.pinkAccent, AppColors.cyanAccent],
+                      colors: [AppColors.primaryPink, AppColors.accentCyan],
                       begin: Alignment.bottomLeft,
                       end: Alignment.topRight,
                     ),
@@ -85,7 +85,7 @@ class ProfileInfoSection extends StatelessWidget {
                   height: 80,
                   decoration: const BoxDecoration(
                     shape: BoxShape.circle,
-                    color: AppColors.secondaryBackground,
+                    color: AppColors.background,
                   ),
                   child: ClipOval(
                     child: Image.asset(
@@ -113,7 +113,7 @@ class ProfileInfoSection extends StatelessWidget {
                 Text(
                   profile.displayName,
                   style: const TextStyle(
-                    color: AppColors.textPrimary,
+                    color: AppColors.primaryText,
                     fontSize: 22,
                     fontWeight: FontWeight.bold,
                     letterSpacing: 0.2,
@@ -127,7 +127,7 @@ class ProfileInfoSection extends StatelessWidget {
                 Text(
                   profile.username,
                   style: const TextStyle(
-                    color: AppColors.cyanAccent,
+                    color: AppColors.accentCyan,
                     fontSize: 14,
                     fontWeight: FontWeight.w600,
                   ),
@@ -140,7 +140,7 @@ class ProfileInfoSection extends StatelessWidget {
                 Text(
                   profile.bio,
                   style: const TextStyle(
-                    color: AppColors.textSecondary,
+                    color: AppColors.secondaryText,
                     fontSize: 12,
                     height: 1.2,
                   ),
@@ -162,7 +162,7 @@ class ProfileInfoSection extends StatelessWidget {
                         gradient: AppColors.primaryGradient,
                         boxShadow: [
                           BoxShadow(
-                            color: AppColors.pinkAccent.withValues(alpha: 0.35),
+                            color: AppColors.primaryText.withValues(alpha: 0.35),
                             blurRadius: 10,
                             offset: const Offset(0, 3),
                           ),
@@ -171,7 +171,7 @@ class ProfileInfoSection extends StatelessWidget {
                       child: const Text(
                         'Edit Profile',
                         style: TextStyle(
-                          color: AppColors.textPrimary,
+                          color: AppColors.primaryText,
                           fontSize: 13,
                           fontWeight: FontWeight.bold,
                         ),

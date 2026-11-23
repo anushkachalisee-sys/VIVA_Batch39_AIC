@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:viva/core/constants/app_color.dart';
+import 'package:viva/app/theme/app_colors.dart';
 
 class ProfileBottomNavigation extends StatelessWidget {
   final int selectedIndex;
@@ -16,7 +16,7 @@ class ProfileBottomNavigation extends StatelessWidget {
     return Container(
       height: 68,
       decoration: BoxDecoration(
-        color: AppColors.mainBackground,
+        color: AppColors.background,
         border: const Border(
           top: BorderSide(
             color: Color(0xFF1F1D38),
@@ -91,7 +91,7 @@ class ProfileBottomNavigation extends StatelessWidget {
                 ),
                 child: Icon(
                   isSelected ? activeIcon : icon,
-                  color: isSelected ? AppColors.cyanAccent : AppColors.textMuted,
+                  color: isSelected ? AppColors.accentCyan : AppColors.mutedText,
                   size: 20,
                 ),
               ),
@@ -102,7 +102,7 @@ class ProfileBottomNavigation extends StatelessWidget {
                 child: Text(
                   label,
                   style: TextStyle(
-                    color: isSelected ? AppColors.cyanAccent : AppColors.textMuted,
+                    color: isSelected ? AppColors.accentCyan : AppColors.mutedText,
                     fontSize: 10,
                     fontWeight: isSelected ? FontWeight.bold : FontWeight.w500,
                   ),

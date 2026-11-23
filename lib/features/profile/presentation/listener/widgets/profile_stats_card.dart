@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:viva/core/constants/app_color.dart';
+import 'package:viva/app/theme/app_colors.dart';
 import 'package:viva/features/profile/domain/entities/listener_profile.dart';
 
 class ProfileStatsCard extends StatelessWidget {
@@ -42,7 +42,7 @@ class ProfileStatsCard extends StatelessWidget {
                       Text(
                         profile.followersCount,
                         style: const TextStyle(
-                          color: AppColors.textPrimary,
+                          color: AppColors.primaryText,
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
                         ),
@@ -51,7 +51,7 @@ class ProfileStatsCard extends StatelessWidget {
                       const Text(
                         'Followers',
                         style: TextStyle(
-                          color: AppColors.textMuted,
+                          color: AppColors.mutedText,
                           fontSize: 12,
                         ),
                       ),
@@ -74,7 +74,7 @@ class ProfileStatsCard extends StatelessWidget {
                       Text(
                         profile.followingCount,
                         style: const TextStyle(
-                          color: AppColors.textPrimary,
+                          color: AppColors.primaryText,
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
                         ),
@@ -83,7 +83,7 @@ class ProfileStatsCard extends StatelessWidget {
                       const Text(
                         'Following',
                         style: TextStyle(
-                          color: AppColors.textMuted,
+                          color: AppColors.mutedText,
                           fontSize: 12,
                         ),
                       ),
@@ -106,7 +106,7 @@ class ProfileStatsCard extends StatelessWidget {
                       Text(
                         profile.matchesPercentage,
                         style: const TextStyle(
-                          color: AppColors.cyanAccent,
+                          color: AppColors.accentCyan,
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
                         ),
@@ -115,7 +115,7 @@ class ProfileStatsCard extends StatelessWidget {
                       const Text(
                         'Matches',
                         style: TextStyle(
-                          color: AppColors.textMuted,
+                          color: AppColors.mutedText,
                           fontSize: 12,
                         ),
                       ),

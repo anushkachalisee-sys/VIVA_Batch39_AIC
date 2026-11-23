@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
-import 'core/constants/app_color.dart';
-import 'features/profile/presentation/listener/pages/listener_profile_page.dart';
+import 'package:viva/features/authentication/presentation/artist/artist_login_page.dart';
+import 'package:viva/features/authentication/presentation/listener/user_login_page.dart';
+import 'package:viva/features/music_preferences/presentation/music_preferences_screen.dart';
+import 'package:viva/features/profile/presentation/listener/pages/listener_profile_page.dart';
+import 'app/theme/app_theme.dart';
+import 'features/authentication/presentation/artist/artist_registration_screen.dart';
+import 'features/authentication/presentation/listener/registration_screen.dart';
 
 void main() {
   runApp(const VivaApp());
@@ -12,21 +17,12 @@ class VivaApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'VIVA Music',
+      title: 'VIVA – Feel the Music',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        brightness: Brightness.dark,
-        scaffoldBackgroundColor: AppColors.mainBackground,
-        primaryColor: AppColors.primaryPurple,
-        colorScheme: const ColorScheme.dark(
-          primary: AppColors.primaryPurple,
-          secondary: AppColors.pinkAccent,
-          tertiary: AppColors.cyanAccent,
-          surface: AppColors.cardBackground,
-        ),
-        useMaterial3: true,
-      ),
-      home: const ListenerProfilePage(),
+      theme: AppTheme.darkTheme,
+      darkTheme: AppTheme.darkTheme,
+      themeMode: ThemeMode.dark,
+      home: const UserLoginPage(),
     );
   }
 }

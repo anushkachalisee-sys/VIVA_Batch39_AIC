@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:viva/core/constants/app_color.dart';
+import 'package:viva/app/theme/app_colors.dart';
 import 'package:viva/features/profile/domain/entities/listener_profile.dart';
 
 class CommunitiesSection extends StatelessWidget {
@@ -25,7 +25,7 @@ class CommunitiesSection extends StatelessWidget {
           const Text(
             'My Communities',
             style: TextStyle(
-              color: AppColors.textPrimary,
+              color: AppColors.primaryText,
               fontSize: 18,
               fontWeight: FontWeight.bold,
             ),
@@ -49,7 +49,7 @@ class CommunitiesSection extends StatelessWidget {
                             const Color(0xFF6B25C2),
                           ]
                         : [
-                            AppColors.pinkAccent,
+                            AppColors.primaryPink,
                             const Color(0xFFB01C6A),
                           ],
                   ),
@@ -102,7 +102,7 @@ class CommunitiesSection extends StatelessWidget {
                 ),
                 child: Icon(
                   icon,
-                  color: AppColors.textPrimary,
+                  color: AppColors.primaryText,
                   size: 20,
                 ),
               ),
@@ -117,7 +117,7 @@ class CommunitiesSection extends StatelessWidget {
                     Text(
                       community.name,
                       style: const TextStyle(
-                        color: AppColors.textPrimary,
+                        color: AppColors.primaryText,
                         fontSize: 13,
                         fontWeight: FontWeight.bold,
                       ),
@@ -128,7 +128,7 @@ class CommunitiesSection extends StatelessWidget {
                     Text(
                       community.membersCount,
                       style: const TextStyle(
-                        color: AppColors.textSecondary,
+                        color: AppColors.secondaryText,
                         fontSize: 11,
                       ),
                       maxLines: 1,

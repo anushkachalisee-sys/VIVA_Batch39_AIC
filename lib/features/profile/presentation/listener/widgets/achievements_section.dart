@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:viva/core/constants/app_color.dart';
+import 'package:viva/app/theme/app_colors.dart';
 import 'package:viva/features/profile/domain/entities/listener_profile.dart';
 
 class AchievementsSection extends StatelessWidget {
@@ -23,7 +23,7 @@ class AchievementsSection extends StatelessWidget {
           const Text(
             'Achievements',
             style: TextStyle(
-              color: AppColors.textPrimary,
+              color: AppColors.primaryText,
               fontSize: 18,
               fontWeight: FontWeight.bold,
             ),
@@ -39,7 +39,7 @@ class AchievementsSection extends StatelessWidget {
               return _buildAchievementBadge(
                 title: achievement.title,
                 icon: isTwin ? Icons.auto_awesome : Icons.explore_outlined,
-                accentColor: isTwin ? AppColors.pinkAccent : AppColors.cyanAccent,
+                accentColor: isTwin ? AppColors.primaryPink : AppColors.accentCyan,
               );
             }).toList(),
           ),
@@ -86,7 +86,7 @@ class AchievementsSection extends StatelessWidget {
           Text(
             title,
             style: const TextStyle(
-              color: AppColors.textPrimary,
+              color: AppColors.primaryText,
               fontSize: 12,
               fontWeight: FontWeight.bold,
             ),

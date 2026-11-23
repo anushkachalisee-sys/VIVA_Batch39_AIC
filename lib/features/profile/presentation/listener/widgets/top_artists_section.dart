@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../../../core/constants/app_color.dart';
+import '../../../../../app/theme/app_colors.dart';
 import '../../../domain/entities/listener_profile.dart';
 
 class TopArtistsSection extends StatelessWidget {
@@ -27,7 +27,7 @@ class TopArtistsSection extends StatelessWidget {
             child: Text(
               'Top Artists',
               style: TextStyle(
-                color: AppColors.textPrimary,
+                color: AppColors.primaryText,
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
               ),
@@ -96,7 +96,7 @@ class TopArtistsSection extends StatelessWidget {
                     Text(
                       artist.name,
                       style: const TextStyle(
-                        color: AppColors.textPrimary,
+                        color: AppColors.primaryText,
                         fontSize: 13,
                         fontWeight: FontWeight.bold,
                       ),
@@ -107,7 +107,7 @@ class TopArtistsSection extends StatelessWidget {
                     Text(
                       artist.genre,
                       style: const TextStyle(
-                        color: AppColors.textSecondary,
+                        color: AppColors.secondaryText,
                         fontSize: 11,
                       ),
                       maxLines: 1,
@@ -127,7 +127,7 @@ class TopArtistsSection extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: [AppColors.primaryPurple, AppColors.pinkAccent],
+          colors: [AppColors.primaryPurple, AppColors.primaryPink],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),
