@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:viva/core/constants/app_colors.dart';
+import 'package:viva/core/constants/app_color.dart';
 
 class ProfileBottomNavigation extends StatelessWidget {
   final int selectedIndex;

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:viva/core/constants/app_colors.dart';
+import 'package:viva/core/constants/app_color.dart';
 import 'package:viva/features/profile/domain/entities/listener_profile.dart';
 
 class ProfileInfoSection extends StatelessWidget {

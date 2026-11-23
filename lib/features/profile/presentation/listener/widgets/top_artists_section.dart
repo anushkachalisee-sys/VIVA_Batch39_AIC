@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../../../core/constants/app_colors.dart';
+import '../../../../../core/constants/app_color.dart';
 import '../../../domain/entities/listener_profile.dart';
 
 class TopArtistsSection extends StatelessWidget {

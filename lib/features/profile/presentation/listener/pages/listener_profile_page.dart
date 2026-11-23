@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:viva/core/constants/app_colors.dart';
+import 'package:viva/core/constants/app_color.dart';
 import 'package:viva/features/profile/data/datasources/profile_local_datasource.dart';
 import 'package:viva/features/profile/data/repositories/profile_repository_impl.dart';
 import '../providers/profile_provider.dart';
