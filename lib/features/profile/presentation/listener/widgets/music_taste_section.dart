@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:viva/app/theme/app_colors.dart';
+import 'package:viva/core/constants/colors.dart';
 import 'package:viva/features/profile/domain/entities/listener_profile.dart';
 
 class MusicTasteSection extends StatelessWidget {

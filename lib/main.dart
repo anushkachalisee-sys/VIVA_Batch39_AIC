@@ -22,7 +22,7 @@ class VivaApp extends StatelessWidget {
       theme: AppTheme.darkTheme,
       darkTheme: AppTheme.darkTheme,
       themeMode: ThemeMode.dark,
-      home: const UserLoginPage(),
+      home: const ListenerProfilePage(),
     );
   }
 }
