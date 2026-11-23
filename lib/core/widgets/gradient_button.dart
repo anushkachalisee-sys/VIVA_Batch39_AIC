@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import '../../app/theme/app_colors.dart';
 import '../../app/theme/app_dimensions.dart';
 import '../../app/theme/app_text_styles.dart';
-import 'loading_widget.dart';
 
 /// Reusable gradient button for the VIVA application.
 ///
@@ -100,7 +99,7 @@ class GradientButton extends StatelessWidget {
     );
   }
 }
-}
+
 
 /// Simple loading indicator widget for GradientButton.
 class LoadingWidget extends StatelessWidget {

@@ -16,6 +16,21 @@ class AppColors {
   static const Color border = Color(0xFF302746);
   static const Color focusedBorder = Color(0xFF9635ED);
 
+  // Aliases and additional colors used across feature widgets
+  static const Color primaryPurple = purple;
+  static const Color pinkAccent = pink;
+  static const Color cyanAccent = cyan;
+  static const Color cardBorder = border;
+  static const Color textMuted = textSecondary;
+  static const Color mainBackground = background;
+  static const Color headerButtonBg = secondaryBackground;
+  static const Color primaryText = textPrimary;
+  static const Color secondaryText = textSecondary;
+  static const Color mutedText = textSecondary;
+  static const Color primaryPink = pink;
+  static const Color accentCyan = cyan;
+  static const Color back = background;
+
   static const LinearGradient primaryGradient = LinearGradient(
     colors: [purple, pink],
     begin: Alignment.centerLeft,

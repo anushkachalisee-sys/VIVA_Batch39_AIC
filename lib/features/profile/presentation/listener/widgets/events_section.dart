@@ -29,7 +29,7 @@ class EventsSection extends StatelessWidget {
               const Text(
                 'My Events',
                 style: TextStyle(
-                  color: AppColors.textPrimary,
+                  color: AppColors.primaryText,
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
                 ),
@@ -56,7 +56,7 @@ class EventsSection extends StatelessWidget {
               child: Container(
                 padding: const EdgeInsets.all(10.0),
                 decoration: BoxDecoration(
-                  color: AppColors.cardBackground,
+                  color: AppColors.back,
                   borderRadius: BorderRadius.circular(16),
                   border: Border.all(color: AppColors.cardBorder, width: 1),
                 ),
@@ -106,7 +106,7 @@ class EventsSection extends StatelessWidget {
                           Text(
                             event.day,
                             style: const TextStyle(
-                              color: AppColors.textPrimary,
+                              color: AppColors.primaryText,
                               fontSize: 16,
                               fontWeight: FontWeight.bold,
                               height: 1.1,
