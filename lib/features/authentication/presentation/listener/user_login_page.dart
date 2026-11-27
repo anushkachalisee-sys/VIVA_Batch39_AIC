@@ -352,6 +352,17 @@ class _UserLoginPageState extends State<UserLoginPage> {
                     ),
                   ),
 
+                  const SizedBox(height: 16),
+
+                  // Explore Mood Discovery Button
+                  GradientButton(
+                    text: 'Explore Mood Discovery 😌',
+                    icon: const Icon(Icons.auto_awesome, size: 18),
+                    onPressed: () {
+                      Navigator.pushNamed(context, AppRoutes.moodSelection);
+                    },
+                  ),
+
                   const SizedBox(height: 32),
 
                   // Bottom Navigation Texts
