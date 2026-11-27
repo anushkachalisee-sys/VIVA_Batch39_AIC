@@ -20,8 +20,8 @@ class VivaApp extends StatelessWidget {
       theme: AppTheme.darkTheme,
       darkTheme: AppTheme.darkTheme,
       themeMode: ThemeMode.dark,
-      // Launch Artist Profile Setup screen directly for US29 testing.
-      initialRoute: AppRoutes.artistProfileSetup,
+      // Launch Edit Profile screen directly for testing.
+      initialRoute: AppRoutes.editProfile,
       routes: {
         ...AppRoutes.routes,
         '/': (context) => const RegistrationScreen(),

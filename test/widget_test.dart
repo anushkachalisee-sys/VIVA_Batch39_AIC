@@ -2,21 +2,16 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:viva/main.dart';
 
 void main() {
-  testWidgets('App smoke test', (WidgetTester tester) async {
+  testWidgets('Edit Profile screen smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
     await tester.pumpWidget(const VivaApp());
 
-    // Verify that VIVA branding text is present.
-    expect(find.text('VIVA'), findsWidgets);
-  });
-
-  testWidgets('VIVA Artist Registration screen smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(const VivaApp());
-
-    // Verify that VIVA header, Bring Your Sound to VIVA title, and CREATE ACCOUNT button exist.
-    expect(find.text('VIVA'), findsOneWidget);
-    expect(find.text('Bring Your Sound to VIVA'), findsOneWidget);
-    expect(find.text('CREATE ACCOUNT'), findsOneWidget);
+    // Verify that Edit Profile screen elements are present.
+    expect(find.text('Edit Profile'), findsOneWidget);
+    expect(find.text('Full Name'), findsOneWidget);
+    expect(find.text('Username'), findsOneWidget);
+    expect(find.text('Bio'), findsOneWidget);
+    expect(find.text('Music Preferences'), findsOneWidget);
+    expect(find.text('Save Changes'), findsOneWidget);
   });
 }
