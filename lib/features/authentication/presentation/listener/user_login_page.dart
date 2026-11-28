@@ -42,27 +42,7 @@ class _UserLoginPageState extends State<UserLoginPage> {
           _isLoading = false;
         });
 
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            backgroundColor: AppColors.background,
-            behavior: SnackBarBehavior.floating,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(12),
-            ),
-            content: Row(
-              children: const [
-                Icon(Icons.check_circle_outline, color: AppColors.accentCyan),
-                SizedBox(width: 10),
-                Expanded(
-                  child: Text(
-                    'Welcome back! Login successful.',
-                    style: TextStyle(color: Colors.white),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        );
+        Navigator.pushReplacementNamed(context, AppRoutes.lyricsSearch);
       });
     }
   }

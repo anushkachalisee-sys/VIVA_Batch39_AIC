@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../features/authentication/presentation/artist/artist_login_page.dart';
+import '../../features/lyrics/presentation/lyrics_search_screen.dart';
 import '../../features/mood/presentation/pages/mood_selection_page.dart';
 import '../../features/music_discovery/presentation/pages/discover_screen.dart';
 import '../../features/authentication/presentation/listener/user_login_page.dart';
@@ -11,6 +12,7 @@ import '../../shared/enums/auth_role.dart';
 class AppRoutes {
   static const String userLogin = '/user-login';
   static const String artistLogin = '/artist-login';
+  static const String lyricsSearch = '/lyrics-search';
   static const String moodSelection = '/mood-selection';
   static const String discover = '/discover';
   static const String forgotPassword = '/forgot-password';
@@ -19,6 +21,7 @@ class AppRoutes {
   static Map<String, WidgetBuilder> get routes => {
         userLogin: (context) => const UserLoginPage(),
         artistLogin: (context) => const ArtistLoginPage(),
+        lyricsSearch: (context) => const LyricsSearchScreen(),
         moodSelection: (context) => const MoodSelectionScreen(),
         discover: (context) => const DiscoverScreen(),
         forgotPassword: (context) {

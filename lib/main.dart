@@ -7,6 +7,7 @@ import 'package:viva/features/profile/presentation/listener/pages/listener_profi
 import 'package:viva/features/search/presentation/search_screen.dart';
 import 'app/routes/app_routes.dart';
 import 'app/theme/app_theme.dart';
+import 'features/lyrics/presentation/lyrics_search_screen.dart';
 
 void main() {
   runApp(const VivaApp());
@@ -23,6 +24,7 @@ class VivaApp extends StatelessWidget {
       theme: AppTheme.darkTheme,
       darkTheme: AppTheme.darkTheme,
       themeMode: ThemeMode.dark,
+      home: const LyricsSearchScreen(),
       routes: AppRoutes.routes,
       home: const SearchScreen(),
     );
