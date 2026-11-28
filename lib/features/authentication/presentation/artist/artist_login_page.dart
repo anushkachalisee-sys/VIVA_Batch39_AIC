@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import '../../../../app/routes/app_routes.dart';
 import '../../../../core/constants/app_assets.dart';
-import '../../../../core/constants/app_colors.dart';
+import 'package:viva/core/constants/colors.dart';
 import '../../../../core/widgets/artist_stage_illustration.dart';
 import '../../../../core/widgets/custom_text_field.dart';
 import '../../../../core/widgets/gradient_button.dart';
+import '../../../../shared/enums/auth_role.dart';
 
 /// Screen 2: VIVA Artist Login Screen
 class ArtistLoginPage extends StatefulWidget {
@@ -44,14 +45,14 @@ class _ArtistLoginPageState extends State<ArtistLoginPage> {
 
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            backgroundColor: AppColors.purple,
+            backgroundColor: AppColors.background,
             behavior: SnackBarBehavior.floating,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(12),
             ),
             content: Row(
               children: const [
-                Icon(Icons.mic, color: AppColors.cyan),
+                Icon(Icons.mic, color: AppColors.accentCyan),
                 SizedBox(width: 10),
                 Expanded(
                   child: Text(
@@ -78,7 +79,7 @@ class _ArtistLoginPageState extends State<ArtistLoginPage> {
         ),
         content: Text(
           message,
-          style: const TextStyle(color: AppColors.textPrimary),
+          style: const TextStyle(color: AppColors.primaryText),
         ),
       ),
     );
@@ -94,7 +95,7 @@ class _ArtistLoginPageState extends State<ArtistLoginPage> {
       body: Container(
         height: screenHeight,
         decoration: const BoxDecoration(
-          gradient: AppColors.backgroundGradient,
+          color: AppColors.background,
         ),
         child: SafeArea(
           child: SingleChildScrollView(
@@ -120,7 +121,7 @@ class _ArtistLoginPageState extends State<ArtistLoginPage> {
                             errorBuilder: (context, error, stackTrace) {
                               return const Icon(
                                 Icons.graphic_eq,
-                                color: AppColors.pink,
+                                color: AppColors.primaryPink,
                                 size: 28,
                               );
                             },
@@ -129,7 +130,7 @@ class _ArtistLoginPageState extends State<ArtistLoginPage> {
                           const Text(
                             'VIVA',
                             style: TextStyle(
-                              color: AppColors.textPrimary,
+                              color: AppColors.primaryText,
                               fontSize: 22,
                               fontWeight: FontWeight.w900,
                               letterSpacing: 2.0,
@@ -146,15 +147,15 @@ class _ArtistLoginPageState extends State<ArtistLoginPage> {
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
                           border: Border.all(
-                            color: AppColors.cyan.withValues(alpha: 0.8),
+                            color: AppColors.accentCyan.withValues(alpha: 0.8),
                             width: 1,
                           ),
-                          color: AppColors.cyan.withValues(alpha: 0.08),
+                          color: AppColors.accentCyan.withValues(alpha: 0.08),
                         ),
                         child: const Text(
                           'FOR ARTISTS',
                           style: TextStyle(
-                            color: AppColors.cyan,
+                            color: AppColors.accentCyan,
                             fontSize: 11,
                             fontWeight: FontWeight.bold,
                             letterSpacing: 1.2,
@@ -175,7 +176,7 @@ class _ArtistLoginPageState extends State<ArtistLoginPage> {
                   const Text(
                     'Welcome Back, Artist!',
                     style: TextStyle(
-                      color: AppColors.textPrimary,
+                      color: AppColors.primaryText,
                       fontSize: 26,
                       fontWeight: FontWeight.bold,
                       letterSpacing: -0.5,
@@ -185,7 +186,7 @@ class _ArtistLoginPageState extends State<ArtistLoginPage> {
                   const Text(
                     'Your music. Your fans. Your community.',
                     style: TextStyle(
-                      color: AppColors.textSecondary,
+                      color: AppColors.secondaryText,
                       fontSize: 14,
                       height: 1.3,
                     ),
@@ -230,7 +231,7 @@ class _ArtistLoginPageState extends State<ArtistLoginPage> {
                         _obscurePassword
                             ? Icons.visibility_outlined
                             : Icons.visibility_off_outlined,
-                        color: AppColors.textSecondary,
+                        color: AppColors.secondaryText,
                         size: 20,
                       ),
                       onPressed: () {
@@ -257,14 +258,16 @@ class _ArtistLoginPageState extends State<ArtistLoginPage> {
                     alignment: Alignment.centerRight,
                     child: GestureDetector(
                       onTap: () {
-                        _showPlaceholderMessage(
-                          'Artist Forgot Password feature requested.',
+                        Navigator.pushNamed(
+                          context,
+                          AppRoutes.forgotPassword,
+                          arguments: AuthRole.artist,
                         );
                       },
                       child: const Text(
                         'Forgot Password?',
                         style: TextStyle(
-                          color: AppColors.cyan,
+                          color: AppColors.accentCyan,
                           fontSize: 13,
                           fontWeight: FontWeight.w600,
                         ),
@@ -294,7 +297,7 @@ class _ArtistLoginPageState extends State<ArtistLoginPage> {
                             const Text(
                               'Need an artist account? ',
                               style: TextStyle(
-                                color: AppColors.textSecondary,
+                                color: AppColors.secondaryText,
                                 fontSize: 14,
                               ),
                             ),
@@ -310,7 +313,7 @@ class _ArtistLoginPageState extends State<ArtistLoginPage> {
                                   Text(
                                     'Join VIVA as an Artist',
                                     style: TextStyle(
-                                      color: AppColors.cyan,
+                                      color: AppColors.accentCyan,
                                       fontSize: 14,
                                       fontWeight: FontWeight.bold,
                                     ),
@@ -318,7 +321,7 @@ class _ArtistLoginPageState extends State<ArtistLoginPage> {
                                   SizedBox(width: 2),
                                   Icon(
                                     Icons.north_east_rounded,
-                                    color: AppColors.cyan,
+                                    color: AppColors.accentCyan,
                                     size: 14,
                                   ),
                                 ],
@@ -333,7 +336,7 @@ class _ArtistLoginPageState extends State<ArtistLoginPage> {
                             const Text(
                               'Not an artist? ',
                               style: TextStyle(
-                                color: AppColors.textSecondary,
+                                color: AppColors.secondaryText,
                                 fontSize: 14,
                               ),
                             ),
@@ -351,7 +354,7 @@ class _ArtistLoginPageState extends State<ArtistLoginPage> {
                               child: const Text(
                                 'Log in as a User',
                                 style: TextStyle(
-                                  color: AppColors.cyan,
+                                  color: AppColors.accentCyan,
                                   fontSize: 14,
                                   fontWeight: FontWeight.bold,
                                 ),

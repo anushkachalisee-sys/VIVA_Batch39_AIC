@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import '../../app/theme/app_colors.dart';
+import 'package:viva/core/constants/colors.dart';
 import '../../app/theme/app_dimensions.dart';
 import '../../app/theme/app_text_styles.dart';
+import 'loading_widget.dart';
 
 /// Reusable gradient button for the VIVA application.
 ///
@@ -21,6 +22,7 @@ class GradientButton extends StatelessWidget {
   final bool isLoading;
   final Gradient? gradient;
   final Widget? icon;
+  final BorderRadius? borderRadius;
 
   const GradientButton({
     super.key,
@@ -31,15 +33,17 @@ class GradientButton extends StatelessWidget {
     this.isLoading = false,
     this.gradient,
     this.icon,
+    this.borderRadius,
   });
 
   bool get _isEnabled => onPressed != null && !isLoading;
 
   @override
   Widget build(BuildContext context) {
-    final buttonRadius = BorderRadius.circular(
-      AppDimensions.buttonRadius,
-    );
+    final buttonRadius = borderRadius ??
+        BorderRadius.circular(
+          AppDimensions.buttonRadius,
+        );
 
     return AnimatedOpacity(
       duration: const Duration(milliseconds: 200),
@@ -99,7 +103,6 @@ class GradientButton extends StatelessWidget {
     );
   }
 }
-
 
 /// Simple loading indicator widget for GradientButton.
 class LoadingWidget extends StatelessWidget {

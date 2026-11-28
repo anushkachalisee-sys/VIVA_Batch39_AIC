@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import '../constants/app_colors.dart';
-
-/// Lightweight custom painter widget for the Artist Login stage & microphone artwork.
+import 'package:viva/core/constants/colors.dart';/// Lightweight custom painter widget for the Artist Login stage & microphone artwork.
 class ArtistStageIllustration extends StatelessWidget {
   const ArtistStageIllustration({super.key});
 
@@ -44,8 +42,8 @@ class _StagePainter extends CustomPainter {
         begin: Alignment.topCenter,
         end: Alignment.bottomCenter,
         colors: [
-          AppColors.cyan.withValues(alpha: 0.35),
-          AppColors.cyan.withValues(alpha: 0.0),
+          AppColors.accentCyan.withValues(alpha: 0.35),
+          AppColors.accentCyan.withValues(alpha: 0.0),
         ],
       ).createShader(Rect.fromLTWH(0, 0, size.width, size.height));
 
@@ -54,8 +52,8 @@ class _StagePainter extends CustomPainter {
         begin: Alignment.topCenter,
         end: Alignment.bottomCenter,
         colors: [
-          AppColors.pink.withValues(alpha: 0.35),
-          AppColors.pink.withValues(alpha: 0.0),
+          AppColors.primaryPink.withValues(alpha: 0.35),
+          AppColors.primaryPink.withValues(alpha: 0.0),
         ],
       ).createShader(Rect.fromLTWH(0, 0, size.width, size.height));
 
@@ -66,8 +64,8 @@ class _StagePainter extends CustomPainter {
     final stageGlowPaint = Paint()
       ..shader = RadialGradient(
         colors: [
-          AppColors.purple.withValues(alpha: 0.5),
-          AppColors.pink.withValues(alpha: 0.2),
+          AppColors.primaryPurple.withValues(alpha: 0.5),
+          AppColors.primaryPink.withValues(alpha: 0.2),
           Colors.transparent,
         ],
         stops: const [0.0, 0.6, 1.0],
@@ -88,7 +86,7 @@ class _StagePainter extends CustomPainter {
         begin: Alignment.topCenter,
         end: Alignment.bottomCenter,
         colors: const [
-          AppColors.secondaryBackground,
+          AppColors.background,
           Color(0xFF0F0B1A),
         ],
       ).createShader(Rect.fromCircle(center: center, radius: stageRadiusX));
@@ -97,7 +95,7 @@ class _StagePainter extends CustomPainter {
       ..style = PaintingStyle.stroke
       ..strokeWidth = 2.5
       ..shader = const LinearGradient(
-        colors: [AppColors.cyan, AppColors.pink, AppColors.purple],
+        colors: [AppColors.accentCyan, AppColors.primaryPink, AppColors.primaryPurple],
       ).createShader(Rect.fromCircle(center: center, radius: stageRadiusX));
 
     final stageRect = Rect.fromCenter(
@@ -126,7 +124,7 @@ class _StagePainter extends CustomPainter {
 
     // Mic Clip Base
     final clipPaint = Paint()
-      ..color = AppColors.purple
+      ..color = AppColors.primaryPurple
       ..style = PaintingStyle.fill;
     canvas.drawCircle(Offset(center.dx, micCenter.dy + 18), 5, clipPaint);
 
@@ -169,7 +167,7 @@ class _StagePainter extends CustomPainter {
       ..style = PaintingStyle.stroke
       ..strokeWidth = 2
       ..shader = const LinearGradient(
-        colors: [AppColors.cyan, AppColors.pink],
+        colors: [AppColors.accentCyan, AppColors.primaryPink],
       ).createShader(micBodyRect);
 
     canvas.drawRRect(
@@ -191,7 +189,7 @@ class _StagePainter extends CustomPainter {
 
     for (int i = 0; i < sparkles.length; i++) {
       final pos = sparkles[i];
-      sparkPaint.color = i % 2 == 0 ? AppColors.cyan : AppColors.pink;
+      sparkPaint.color = i % 2 == 0 ? AppColors.accentCyan : AppColors.primaryPink;
       final radius = 2.0 + (i % 3);
       canvas.drawCircle(pos, radius, sparkPaint);
     }

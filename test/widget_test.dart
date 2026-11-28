@@ -1,15 +1,16 @@
+// This is a basic Flutter widget test for VIVA.
+
 import 'package:flutter_test/flutter_test.dart';
 import 'package:viva/main.dart';
 
 void main() {
-  testWidgets('Artist Profile Creation screen smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
+  testWidgets('VIVA App starts up and shows login and mood discovery button', (WidgetTester tester) async {
+    // Build the app and trigger a frame.
     await tester.pumpWidget(const VivaApp());
 
-    // Verify that Artist Profile Creation screen elements are present.
-    expect(find.text('Create Artist Profile'), findsOneWidget);
-    expect(find.text('Artist Name *'), findsOneWidget);
-    expect(find.text('Choose Your Music Genres *'), findsOneWidget);
-    expect(find.text('Create Profile'), findsOneWidget);
+    // Verify VIVA branding is present.
+    expect(find.text('VIVA'), findsWidgets);
+    expect(find.text('Welcome Back!'), findsOneWidget);
+    expect(find.text('Explore Mood Discovery 😌'), findsOneWidget);
   });
 }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../app/theme/app_colors.dart';
+import 'package:viva/core/constants/colors.dart';
 
 /// Reusable loading indicator for the VIVA application.
 class LoadingWidget extends StatelessWidget {
