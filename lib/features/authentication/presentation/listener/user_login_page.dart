@@ -4,6 +4,7 @@ import '../../../../core/constants/app_assets.dart';
 import 'package:viva/core/constants/colors.dart';
 import '../../../../core/widgets/custom_text_field.dart';
 import '../../../../core/widgets/gradient_button.dart';
+import '../../../../shared/enums/auth_role.dart';
 
 /// Screen 1: VIVA User Login Screen
 class UserLoginPage extends StatefulWidget {
@@ -251,8 +252,10 @@ class _UserLoginPageState extends State<UserLoginPage> {
                     alignment: Alignment.centerRight,
                     child: GestureDetector(
                       onTap: () {
-                        _showPlaceholderMessage(
-                          'Forgot Password feature requested.',
+                        Navigator.pushNamed(
+                          context,
+                          AppRoutes.forgotPassword,
+                          arguments: AuthRole.listener,
                         );
                       },
                       child: const Text(

@@ -22,6 +22,7 @@ class GradientButton extends StatelessWidget {
   final bool isLoading;
   final Gradient? gradient;
   final Widget? icon;
+  final BorderRadius? borderRadius;
 
   const GradientButton({
     super.key,
@@ -32,15 +33,17 @@ class GradientButton extends StatelessWidget {
     this.isLoading = false,
     this.gradient,
     this.icon,
+    this.borderRadius,
   });
 
   bool get _isEnabled => onPressed != null && !isLoading;
 
   @override
   Widget build(BuildContext context) {
-    final buttonRadius = BorderRadius.circular(
-      AppDimensions.buttonRadius,
-    );
+    final buttonRadius = borderRadius ??
+        BorderRadius.circular(
+          AppDimensions.buttonRadius,
+        );
 
     return AnimatedOpacity(
       duration: const Duration(milliseconds: 200),

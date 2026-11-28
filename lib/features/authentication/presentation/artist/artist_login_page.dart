@@ -5,6 +5,7 @@ import 'package:viva/core/constants/colors.dart';
 import '../../../../core/widgets/artist_stage_illustration.dart';
 import '../../../../core/widgets/custom_text_field.dart';
 import '../../../../core/widgets/gradient_button.dart';
+import '../../../../shared/enums/auth_role.dart';
 
 /// Screen 2: VIVA Artist Login Screen
 class ArtistLoginPage extends StatefulWidget {
@@ -257,8 +258,10 @@ class _ArtistLoginPageState extends State<ArtistLoginPage> {
                     alignment: Alignment.centerRight,
                     child: GestureDetector(
                       onTap: () {
-                        _showPlaceholderMessage(
-                          'Artist Forgot Password feature requested.',
+                        Navigator.pushNamed(
+                          context,
+                          AppRoutes.forgotPassword,
+                          arguments: AuthRole.artist,
                         );
                       },
                       child: const Text(
