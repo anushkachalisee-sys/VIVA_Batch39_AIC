@@ -26,7 +26,7 @@ class VivaApp extends StatelessWidget {
       darkTheme: AppTheme.darkTheme,
       themeMode: ThemeMode.dark,
       routes: AppRoutes.routes,
-      home: const SearchScreen(),
+      home: const ForgotPasswordScreen(),
     );
   }
 }
