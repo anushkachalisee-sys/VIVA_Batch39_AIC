@@ -17,7 +17,7 @@ class VivaApp extends StatelessWidget {
       theme: AppTheme.darkTheme,
       darkTheme: AppTheme.darkTheme,
       themeMode: ThemeMode.dark,
-      initialRoute: AppRoutes.userLogin,
+      initialRoute: AppRoutes.discover,
       routes: AppRoutes.routes,
     );
   }
