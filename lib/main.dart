@@ -7,8 +7,6 @@ import 'package:viva/features/profile/presentation/listener/pages/listener_profi
 import 'package:viva/features/search/presentation/search_screen.dart';
 import 'app/routes/app_routes.dart';
 import 'app/theme/app_theme.dart';
-import 'features/authentication/presentation/artist/artist_registration_screen.dart';
-import 'features/authentication/presentation/listener/registration_screen.dart';
 
 void main() {
   runApp(const VivaApp());
