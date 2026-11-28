@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'app_colors.dart';
+import 'package:viva/core/constants/colors.dart';
 import 'app_dimensions.dart';
 import 'app_text_styles.dart';
 

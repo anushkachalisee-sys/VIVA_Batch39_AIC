@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:viva/core/constants/app_colors.dart';
+import 'package:viva/core/constants/colors.dart';
 import 'package:viva/features/profile/data/datasources/profile_local_datasource.dart';
 import 'package:viva/features/profile/data/repositories/profile_repository_impl.dart';
 import '../providers/profile_provider.dart';
@@ -43,7 +43,7 @@ class _ListenerProfilePageState extends State<ListenerProfilePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.mainBackground,
+      backgroundColor: AppColors.background,
       body: SafeArea(
         child: AnimatedBuilder(
           animation: _provider,
@@ -61,7 +61,7 @@ class _ListenerProfilePageState extends State<ListenerProfilePage> {
               return const Center(
                 child: Text(
                   'Profile failed to load',
-                  style: TextStyle(color: AppColors.textPrimary),
+                  style: TextStyle(color: AppColors.primaryText),
                 ),
               );
             }
