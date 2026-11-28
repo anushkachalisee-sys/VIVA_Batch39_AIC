@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../../app/theme/app_colors.dart';
+import 'package:viva/core/constants/colors.dart';
 import '../../../../core/widgets/custom_text_field.dart';
 
 /// Reusable search field specifically configured for searching/filtering artists.

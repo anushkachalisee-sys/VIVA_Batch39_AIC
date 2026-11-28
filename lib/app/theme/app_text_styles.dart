@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'app_colors.dart';
+import 'package:viva/core/constants/colors.dart';
 
 /// Centralized typography and text styles for the VIVA application.
 /// Provides consistent typography across all screens and components.
