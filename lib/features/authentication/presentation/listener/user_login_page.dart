@@ -42,27 +42,7 @@ class _UserLoginPageState extends State<UserLoginPage> {
           _isLoading = false;
         });
 
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            backgroundColor: AppColors.background,
-            behavior: SnackBarBehavior.floating,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(12),
-            ),
-            content: Row(
-              children: const [
-                Icon(Icons.check_circle_outline, color: AppColors.accentCyan),
-                SizedBox(width: 10),
-                Expanded(
-                  child: Text(
-                    'Welcome back! Login successful.',
-                    style: TextStyle(color: Colors.white),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        );
+        Navigator.pushReplacementNamed(context, AppRoutes.lyricsSearch);
       });
     }
   }
@@ -353,6 +333,17 @@ class _UserLoginPageState extends State<UserLoginPage> {
                         ),
                       ],
                     ),
+                  ),
+
+                  const SizedBox(height: 16),
+
+                  // Explore Mood Discovery Button
+                  GradientButton(
+                    text: 'Explore Mood Discovery 😌',
+                    icon: const Icon(Icons.auto_awesome, size: 18),
+                    onPressed: () {
+                      Navigator.pushNamed(context, AppRoutes.moodSelection);
+                    },
                   ),
 
                   const SizedBox(height: 32),
