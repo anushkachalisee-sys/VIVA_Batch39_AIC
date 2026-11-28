@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:viva/app/theme/app_colors.dart';
+import 'package:viva/core/constants/colors.dart';/// Lightweight custom painter widget for the Artist Login stage & microphone artwork.
 import '../../data/models/mood_model.dart';
 import '../widgets/mood_info_card.dart';
 import '../widgets/mood_playlist_card.dart';

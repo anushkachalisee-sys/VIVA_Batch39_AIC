@@ -6,6 +6,8 @@ import '../../features/music_discovery/presentation/pages/discover_screen.dart';
 import '../../features/authentication/presentation/listener/user_login_page.dart';
 import '../../features/authentication/presentation/password/check_your_inbox_screen.dart';
 import '../../features/authentication/presentation/password/forgot_password_screen.dart';
+import '../../features/artist_profile/presentation/artist_profile_setup_screen.dart';
+import '../../features/profile/presentation/listener/pages/edit_profile_screen.dart';
 import '../../shared/enums/auth_role.dart';
 
 /// Navigation routes for VIVA.
@@ -17,6 +19,8 @@ class AppRoutes {
   static const String discover = '/discover';
   static const String forgotPassword = '/forgot-password';
   static const String checkYourInbox = '/check-your-inbox';
+  static const String artistProfileSetup = '/artist-profile-setup';
+  static const String editProfile = '/edit-profile';
 
   static Map<String, WidgetBuilder> get routes => {
         userLogin: (context) => const UserLoginPage(),
@@ -24,6 +28,8 @@ class AppRoutes {
         lyricsSearch: (context) => const LyricsSearchScreen(),
         moodSelection: (context) => const MoodSelectionScreen(),
         discover: (context) => const DiscoverScreen(),
+        artistProfileSetup: (context) => const ArtistProfileSetupScreen(),
+        editProfile: (context) => const EditProfileScreen(),
         forgotPassword: (context) {
           final args = ModalRoute.of(context)?.settings.arguments;
           final role = args is AuthRole ? args : AuthRole.listener;
@@ -39,4 +45,3 @@ class AppRoutes {
         },
       };
 }
-

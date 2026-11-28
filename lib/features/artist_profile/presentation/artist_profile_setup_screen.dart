@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import '../../../app/theme/app_colors.dart';
 import '../../../app/theme/app_dimensions.dart';
 import '../../../app/theme/app_text_styles.dart';
 import '../../../core/widgets/custom_text_field.dart';
 import '../../../core/widgets/gradient_button.dart';
 import '../../music_preferences/presentation/widgets/preference_chip.dart';
+import 'package:viva/core/constants/colors.dart';/// Lightweight custom painter widget for the Artist Login stage & microphone artwork.
 
 /// Screen for US29: Artist Profile Creation
 /// Allows artists to enter their stage name, bio (with 200 char counter),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:viva/app/theme/app_colors.dart';
 import '../../data/models/mood_model.dart';
+import 'package:viva/core/constants/colors.dart';/// Lightweight custom painter widget for the Artist Login stage & microphone artwork.
+
 
 class SongTile extends StatelessWidget {
   final Song song;

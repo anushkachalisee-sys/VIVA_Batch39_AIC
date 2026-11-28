@@ -56,7 +56,7 @@ class EventsSection extends StatelessWidget {
               child: Container(
                 padding: const EdgeInsets.all(10.0),
                 decoration: BoxDecoration(
-                  color: AppColors.back,
+                  color: AppColors.cardBackground,
                   borderRadius: BorderRadius.circular(16),
                   border: Border.all(color: AppColors.cardBorder, width: 1),
                 ),
