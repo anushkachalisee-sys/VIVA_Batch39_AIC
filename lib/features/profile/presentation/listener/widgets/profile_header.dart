@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:viva/app/theme/app_colors.dart';
+import 'package:viva/core/constants/colors.dart';
 
 class ProfileHeader extends StatelessWidget {
   final VoidCallback? onBackTap;

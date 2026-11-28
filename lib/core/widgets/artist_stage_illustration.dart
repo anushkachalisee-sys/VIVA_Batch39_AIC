@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:viva/app/theme/app_colors.dart';/// Lightweight custom painter widget for the Artist Login stage & microphone artwork.
+import 'package:viva/core/constants/colors.dart';/// Lightweight custom painter widget for the Artist Login stage & microphone artwork.
 class ArtistStageIllustration extends StatelessWidget {
   const ArtistStageIllustration({super.key});
 

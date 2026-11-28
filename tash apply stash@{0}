@@ -1,0 +1,148 @@
+[1mdiff --git a/lib/app/routes/app_routes.dart b/lib/app/routes/app_routes.dart[m
+[1mindex a77e23e..4765e28 100644[m
+[1m--- a/lib/app/routes/app_routes.dart[m
+[1m+++ b/lib/app/routes/app_routes.dart[m
+[36m@@ -1,14 +1,33 @@[m
+ import 'package:flutter/material.dart';[m
+[31m-import '../../features/authentication/presentation/listener/user_login_page.dart';[m
+ import '../../features/authentication/presentation/artist/artist_login_page.dart';[m
+[32m+[m[32mimport '../../features/authentication/presentation/listener/user_login_page.dart';[m
+[32m+[m[32mimport '../../features/authentication/presentation/password/check_your_inbox_screen.dart';[m
+[32m+[m[32mimport '../../features/authentication/presentation/password/forgot_password_screen.dart';[m
+[32m+[m[32mimport '../../shared/enums/auth_role.dart';[m
+ [m
+ /// Navigation routes for VIVA.[m
+ class AppRoutes {[m
+   static const String userLogin = '/user-login';[m
+   static const String artistLogin = '/artist-login';[m
+[32m+[m[32m  static const String forgotPassword = '/forgot-password';[m
+[32m+[m[32m  static const String checkYourInbox = '/check-your-inbox';[m
+ [m
+   static Map<String, WidgetBuilder> get routes => {[m
+         userLogin: (context) => const UserLoginPage(),[m
+         artistLogin: (context) => const ArtistLoginPage(),[m
+[32m+[m[32m        forgotPassword: (context) {[m
+[32m+[m[32m          final args = ModalRoute.of(context)?.settings.arguments;[m
+[32m+[m[32m          final role = args is AuthRole ? args : AuthRole.listener;[m
+[32m+[m[32m          return ForgotPasswordScreen(role: role);[m
+[32m+[m[32m        },[m
+[32m+[m[32m        checkYourInbox: (context) {[m
+[32m+[m[32m          final args = ModalRoute.of(context)?.settings.arguments;[m
+[32m+[m[32m          final role = args is AuthRole[m
+[32m+[m[32m              ? args[m
+[32m+[m[32m              : (args is Map ? args['role'] as AuthRole? : null) ?? AuthRole.listener;[m
+[32m+[m[32m          final email = args is Map ? args['email'] as String? : null;[m
+[32m+[m[32m          return CheckYourInboxScreen(role: role, email: email);[m
+[32m+[m[32m        },[m
+       };[m
+ }[m
+[41m+[m
+[1mdiff --git a/lib/core/widgets/gradient_button.dart b/lib/core/widgets/gradient_button.dart[m
+[1mindex 249b802..77f8a6c 100644[m
+[1m--- a/lib/core/widgets/gradient_button.dart[m
+[1m+++ b/lib/core/widgets/gradient_button.dart[m
+[36m@@ -22,6 +22,7 @@[m [mclass GradientButton extends StatelessWidget {[m
+   final bool isLoading;[m
+   final Gradient? gradient;[m
+   final Widget? icon;[m
+[32m+[m[32m  final BorderRadius? borderRadius;[m
+ [m
+   const GradientButton({[m
+     super.key,[m
+[36m@@ -32,15 +33,17 @@[m [mclass GradientButton extends StatelessWidget {[m
+     this.isLoading = false,[m
+     this.gradient,[m
+     this.icon,[m
+[32m+[m[32m    this.borderRadius,[m
+   });[m
+ [m
+   bool get _isEnabled => onPressed != null && !isLoading;[m
+ [m
+   @override[m
+   Widget build(BuildContext context) {[m
+[31m-    final buttonRadius = BorderRadius.circular([m
+[31m-      AppDimensions.buttonRadius,[m
+[31m-    );[m
+[32m+[m[32m    final buttonRadius = borderRadius ??[m
+[32m+[m[32m        BorderRadius.circular([m
+[32m+[m[32m          AppDimensions.buttonRadius,[m
+[32m+[m[32m        );[m
+ [m
+     return AnimatedOpacity([m
+       duration: const Duration(milliseconds: 200),[m
+[1mdiff --git a/lib/features/authentication/presentation/artist/artist_login_page.dart b/lib/features/authentication/presentation/artist/artist_login_page.dart[m
+[1mindex 0be7c2e..818aca5 100644[m
+[1m--- a/lib/features/authentication/presentation/artist/artist_login_page.dart[m
+[1m+++ b/lib/features/authentication/presentation/artist/artist_login_page.dart[m
+[36m@@ -5,6 +5,7 @@[m [mimport 'package:viva/core/constants/colors.dart';[m
+ import '../../../../core/widgets/artist_stage_illustration.dart';[m
+ import '../../../../core/widgets/custom_text_field.dart';[m
+ import '../../../../core/widgets/gradient_button.dart';[m
+[32m+[m[32mimport '../../../../shared/enums/auth_role.dart';[m
+ [m
+ /// Screen 2: VIVA Artist Login Screen[m
+ class ArtistLoginPage extends StatefulWidget {[m
+[36m@@ -257,8 +258,10 @@[m [mclass _ArtistLoginPageState extends State<ArtistLoginPage> {[m
+                     alignment: Alignment.centerRight,[m
+                     child: GestureDetector([m
+                       onTap: () {[m
+[31m-                        _showPlaceholderMessage([m
+[31m-                          'Artist Forgot Password feature requested.',[m
+[32m+[m[32m                        Navigator.pushNamed([m
+[32m+[m[32m                          context,[m
+[32m+[m[32m                          AppRoutes.forgotPassword,[m
+[32m+[m[32m                          arguments: AuthRole.artist,[m
+                         );[m
+                       },[m
+                       child: const Text([m
+[1mdiff --git a/lib/features/authentication/presentation/listener/user_login_page.dart b/lib/features/authentication/presentation/listener/user_login_page.dart[m
+[1mindex 58db90c..9c53b6c 100644[m
+[1m--- a/lib/features/authentication/presentation/listener/user_login_page.dart[m
+[1m+++ b/lib/features/authentication/presentation/listener/user_login_page.dart[m
+[36m@@ -4,6 +4,7 @@[m [mimport '../../../../core/constants/app_assets.dart';[m
+ import 'package:viva/core/constants/colors.dart';[m
+ import '../../../../core/widgets/custom_text_field.dart';[m
+ import '../../../../core/widgets/gradient_button.dart';[m
+[32m+[m[32mimport '../../../../shared/enums/auth_role.dart';[m
+ [m
+ /// Screen 1: VIVA User Login Screen[m
+ class UserLoginPage extends StatefulWidget {[m
+[36m@@ -251,8 +252,10 @@[m [mclass _UserLoginPageState extends State<UserLoginPage> {[m
+                     alignment: Alignment.centerRight,[m
+                     child: GestureDetector([m
+                       onTap: () {[m
+[31m-                        _showPlaceholderMessage([m
+[31m-                          'Forgot Password feature requested.',[m
+[32m+[m[32m                        Navigator.pushNamed([m
+[32m+[m[32m                          context,[m
+[32m+[m[32m                          AppRoutes.forgotPassword,[m
+[32m+[m[32m                          arguments: AuthRole.listener,[m
+                         );[m
+                       },[m
+                       child: const Text([m
+[1mdiff --git a/lib/main.dart b/lib/main.dart[m
+[1mindex cda5792..10cfc0e 100644[m
+[1m--- a/lib/main.dart[m
+[1m+++ b/lib/main.dart[m
+[36m@@ -1,8 +1,11 @@[m
+ import 'package:flutter/material.dart';[m
+ import 'package:viva/features/authentication/presentation/artist/artist_login_page.dart';[m
+ import 'package:viva/features/authentication/presentation/listener/user_login_page.dart';[m
+[32m+[m[32mimport 'package:viva/features/authentication/presentation/password/forgot_password_screen.dart';[m
+ import 'package:viva/features/music_preferences/presentation/music_preferences_screen.dart';[m
+ import 'package:viva/features/profile/presentation/listener/pages/listener_profile_page.dart';[m
+[32m+[m[32mimport 'package:viva/features/search/presentation/search_screen.dart';[m
+[32m+[m[32mimport 'app/routes/app_routes.dart';[m
+ import 'app/theme/app_theme.dart';[m
+ import 'features/authentication/presentation/artist/artist_registration_screen.dart';[m
+ import 'features/authentication/presentation/listener/registration_screen.dart';[m
+[36m@@ -22,7 +25,8 @@[m [mclass VivaApp extends StatelessWidget {[m
+       theme: AppTheme.darkTheme,[m
+       darkTheme: AppTheme.darkTheme,[m
+       themeMode: ThemeMode.dark,[m
+[31m-      home: const ListenerProfilePage(),[m
+[32m+[m[32m      routes: AppRoutes.routes,[m
+[32m+[m[32m      home: const SearchScreen(),[m
+     );[m
+   }[m
+ }[m
